@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FinRakshak - Add Expense</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            padding: 30px;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            background: white;
+            padding: 18px 30px;
+            border-radius: 15px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #11998e;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #11998e;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTAINER */
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        /* LEFT INFORMATION */
+
+        .info-section {
+            width: 40%;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white;
+
+            border-radius: 20px;
+            padding: 45px 35px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info-section h1 {
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .info-section p {
+            line-height: 1.7;
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .tips {
+            margin-top: 30px;
+        }
+
+        .tips p {
+            margin: 13px 0;
+            font-size: 15px;
+        }
+
+        /* FORM */
+
+        .form-section {
+            width: 60%;
+            background: white;
+
+            border-radius: 20px;
+            padding: 40px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .form-section h2 {
+            font-size: 28px;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        /* FORM GROUP */
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+
+            padding: 13px 15px;
+
+            border: 1px solid #ddd;
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            background: white;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #11998e;
+
+            box-shadow:
+                0 0 0 3px rgba(17, 153, 142, 0.12);
+        }
+
+        /* TWO COLUMN ROW */
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .form-row .form-group {
+            width: 50%;
+        }
+
+        /* BUTTON */
+
+        .add-btn {
+            width: 100%;
+
+            padding: 14px;
+
+            border: none;
+            border-radius: 9px;
+
+            background:
+                linear-gradient(135deg, #11998e, #38ef7d);
+
+            color: white;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(17, 153, 142, 0.3);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 800px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .info-section,
+            .form-section {
+                width: 100%;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .form-row .form-group {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            FinRakshak
+        </div>
+
+        <a href="dashboard.jsp" class="back-btn">
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+
+    <!-- MAIN -->
+
+    <div class="container">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="info-section">
+
+            <h1>
+                Track Your Spending 💰
+            </h1>
+
+            <p>
+                Keep a record of your daily expenses and
+                understand where your money goes.
+            </p>
+
+            <div class="tips">
+
+                <p>✓ Record expenses regularly</p>
+
+                <p>✓ Choose the correct category</p>
+
+                <p>✓ Keep descriptions meaningful</p>
+
+                <p>✓ Review your spending frequently</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT SIDE -->
+
+        <div class="form-section">
+
+            <h2>
+                Add New Expense
+            </h2>
+
+            <p class="subtitle">
+                Enter the details of your expense below.
+            </p>
+
+
+            <form action="addExpense" method="post">
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select
+                        id="category"
+                        name="category"
+                        required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="Food">
+                            🍔 Food
+                        </option>
+
+                        <option value="Travel">
+                            🚗 Travel
+                        </option>
+
+                        <option value="Education">
+                            📚 Education
+                        </option>
+
+                        <option value="Shopping">
+                            🛍️ Shopping
+                        </option>
+
+                        <option value="Entertainment">
+                            🎬 Entertainment
+                        </option>
+
+                        <option value="Medical">
+                            🏥 Medical
+                        </option>
+
+                        <option value="Other">
+                            📦 Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- AMOUNT + DATE -->
+
+                <div class="form-row">
+
+
+                    <div class="form-group">
+
+                        <label for="amount">
+                            Amount (₹)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="amount"
+                            name="amount"
+                            placeholder="Enter amount"
+                            step="0.01"
+                            min="0"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="expenseDate">
+                            Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expenseDate"
+                            name="expenseDate"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Description
+                    </label>
+
+                    <input
+                        type="text"
+                        id="description"
+                        name="description"
+                        placeholder="e.g. Lunch at college canteen"
+                        required>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="add-btn">
+
+                    + Add Expense
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
